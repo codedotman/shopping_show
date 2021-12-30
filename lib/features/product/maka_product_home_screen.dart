@@ -148,11 +148,13 @@ class _MakaHomeScreenState extends State<MakaHomeScreen>
 
   @override
   void onError(String error) {
-    showStatusBottomSheet(context, message: error, success: false);
+    showStatusBottomSheet(context,
+        message: error, success: false, key: const Key("status_error"));
   }
 
   @override
   void onSuccess(String message) {
-    showStatusBottomSheet(context, message: message);
+    showStatusBottomSheet(context,
+        message: message, key: const Key("status_success"));
   }
 }

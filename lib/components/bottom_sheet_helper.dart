@@ -48,7 +48,9 @@ Future<void> showAddProductBottomSheet(
     context: context,
     builder: (context) {
       return _createExtensibleDialogWidget(
-        const AddProductForm(),
+        const AddProductForm(
+          key: Key("add_product_form"),
+        ),
         context,
         padding: const EdgeInsets.all(20),
       );
@@ -57,7 +59,7 @@ Future<void> showAddProductBottomSheet(
 }
 
 Future<void> showStatusBottomSheet(BuildContext context,
-    {required String message, bool success = true}) {
+    {Key? key, required String message, bool success = true}) {
   return showModalBottomSheet(
     backgroundColor: Colors.transparent,
     shape: const RoundedRectangleBorder(
@@ -93,7 +95,7 @@ Future<void> showStatusBottomSheet(BuildContext context,
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: Center(
                           child: Text(
-                        success ? "Successful!" : "Oops!",
+                        success ? "Successful" : "Oops!",
                         style: Theme.of(context).textTheme.subtitle1!.copyWith(
                               fontWeight: FontWeight.w600,
                             ),

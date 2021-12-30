@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Maka Demo',
         theme: ThemeData(primarySwatch: Colors.blue, textTheme: getTextTheme),
-        home: const MakaHomeScreen(),
+        home: const MakaHomeScreen(
+          key: Key("maka_home"),
+        ),
       ),
     );
   }
