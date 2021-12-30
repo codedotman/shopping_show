@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_show/utils/maka_colors.dart';
 
 class MakaAppBar extends AppBar {
   MakaAppBar({
@@ -26,10 +27,8 @@ class MakaAppBar extends AppBar {
           title: title,
           actions: actions,
           flexibleSpace: flexibleSpace ??
-              SafeArea(
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.white),
-                ),
+              Container(
+                color: primaryColor,
               ),
           bottom: bottom,
           elevation: elevation,
