@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_show/components/maka_button.dart';
 import 'package:shopping_show/components/maka_images.dart';
+import 'package:shopping_show/features/product/add_product_form.dart';
 
 _createExtensibleDialogWidget(
   Widget body,
@@ -36,6 +37,22 @@ _createExtensibleDialogWidget(
         ),
       ),
     ),
+  );
+}
+
+Future<void> showAddProductBottomSheet(
+  BuildContext context,
+) {
+  return showModalBottomSheet(
+    isScrollControlled: true,
+    context: context,
+    builder: (context) {
+      return _createExtensibleDialogWidget(
+        const AddProductForm(),
+        context,
+        padding: const EdgeInsets.all(20),
+      );
+    },
   );
 }
 

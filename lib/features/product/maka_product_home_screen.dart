@@ -38,7 +38,7 @@ class _MakaHomeScreenState extends State<MakaHomeScreen>
               })),
       floatingActionButton: FloatingActionButton(
         key: const Key("add_product_fab"),
-        onPressed: () {},
+        onPressed: () => showAddProductBottomSheet(context),
         backgroundColor: primaryColor,
         child: const Icon(Icons.add),
       ),
